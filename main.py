@@ -27,6 +27,10 @@ def main():
         for vrect in plot.layout.shapes:
             fig.add_shape(vrect, row=i + 1, col=1)
 
+    for i in range(1, len(plots) + 1):
+        fig.update_yaxes(title_text="Production (MW)", row=i, col=1)
+
+    fig.update_layout(hoverlabel_namelength=-1)
     fig.show()
 
 

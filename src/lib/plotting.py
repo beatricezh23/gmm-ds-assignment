@@ -7,8 +7,6 @@ MODE_COLORS = {
     "wind": "#74cdb9",
     "solar": "#f27406",
     "hydro": "#2772b2",
-    "hydro storage": "#0052cc",
-    "battery storage": "lightgray",
     "biomass": "#166a57",
     "geothermal": "yellow",
     "nuclear": "#AEB800",
@@ -58,5 +56,4 @@ def plot_events(
                 layer="above",
                 line_width=0,
             )
-    fig.update_layout(hoverlabel_namelength=-1)
     return fig
