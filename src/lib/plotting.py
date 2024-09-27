@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
 from src.lib.events import ProductionParserEvent, PowerBreakdown
@@ -57,3 +58,22 @@ def plot_events(
                 line_width=0,
             )
     return fig
+
+
+def show_plots(plots: dict[str, go.Figure]):
+    fig = make_subplots(rows=len(plots), cols=1, subplot_titles=list(plots.keys()))
+    for i, (file, plot) in enumerate(plots.items()):
+        for trace in plot.data:
+            if i != 0:  # only show legend for first plot
+                trace.showlegend = False
+
+            fig.add_trace(trace, row=i + 1, col=1)
+
+        for vrect in plot.layout.shapes:
+            fig.add_shape(vrect, row=i + 1, col=1)
+
+    for i in range(1, len(plots) + 1):
+        fig.update_yaxes(title_text="Production (MW)", row=i, col=1)
+
+    fig.update_layout(hoverlabel_namelength=-1)
+    fig.show()

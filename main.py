@@ -1,8 +1,8 @@
 import os
-from src.lib.plotting import plot_events
+from src.lib.plotting import plot_events, show_plots
 from src.lib.reader import read_csv
 from src.validate import validate_events
-from plotly.subplots import make_subplots
+
 
 
 def main():
@@ -16,22 +16,7 @@ def main():
         failed_events = validate_events(events)
         plots[file] = plot_events(events, failed_events)
 
-    fig = make_subplots(rows=len(plots), cols=1, subplot_titles=list(plots.keys()))
-    for i, (file, plot) in enumerate(plots.items()):
-        for trace in plot.data:
-            if i != 0:  # only show legend for first plot
-                trace.showlegend = False
-
-            fig.add_trace(trace, row=i + 1, col=1)
-
-        for vrect in plot.layout.shapes:
-            fig.add_shape(vrect, row=i + 1, col=1)
-
-    for i in range(1, len(plots) + 1):
-        fig.update_yaxes(title_text="Production (MW)", row=i, col=1)
-
-    fig.update_layout(hoverlabel_namelength=-1)
-    fig.show()
+    show_plots(plots)
 
 
 if __name__ == "__main__":
