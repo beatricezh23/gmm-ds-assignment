@@ -32,18 +32,35 @@ This repository contains a very simple data quality pipeline that:
 
 ## Get started
 
+Step 1: Create a new repo from this template and make it private.
+👇
+![copy template](./.github/figures/template.png)
+
+Step 2: Clone it locally and get the project up and running.
+
+Create a virtual environment and install the dependencies:
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Step 3: Run the pipeline
+```bash
+python main.py
+```
 
 ## Deliverables
 
-1. Copy this repository as a template repository to your own GitHub account, and make it private.
-2. Implement data quality checks in `src/checks.py` and add them to the list of checks in `src/validate.py`
-3. Run the pipeline using `python main.py` and verify that the checks are working as expected
-4. Replace this README with a description of how you solved the task. Explain your thought process and the decisions you made along the way. Also include any improvements you would make if you had more time.
-5. Share the repository with @FelixDQ, @pierresegonne and @wobniarin
+1. Implement data quality checks in `src/checks.py` and add them to the list of checks in `src/validate.py`
+2. Run the pipeline using `python main.py` and verify that the checks are working as expected
+3. Replace this README with a description of how you solved the task. Explain your thought process and the decisions you made along the way. Also include any improvements you would make if you had more time.
+4. Share the repository with [@FelixDQ](https://github.com/FelixDQ), [@pierresegonne](https://github.com/pierresegonne) and [@wobniarin](https://github.com/wobniarin)
 
 ## Notes
 
 - Spend no more than 3 hours on this task
+- We included an investigation notebook (`investigation.ipynb`) that you can use to explore the data
 - You are free to make any changes to the pipeline, but with the limited time, we recommend focusing on the data quality checks
 - If you use any static or external data, please include your thoughts on how we could apply this to other regions. When maintaining 100s of regions, we want the checks to be as general as possible.
 - Feel free to reach out to us if you have any questions
