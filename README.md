@@ -12,7 +12,7 @@ The data you will be working with is a timeseries of electricity production brea
 
 ## Expectations
 - Spend no more than 3 hours on this task. Prioritize wisely and focus on what you think is most important.
-- Your approach should be as general as possible. We are maintaining 100s of zones at Electricity Maps, so we can't spend a lot of manual time on each zone.
+- Your approach should be as general as possible. We are maintaining 100s of regions at Electricity Maps, so we can't spend a lot of manual time on each region.
 - If you use any static or external data, please include your thoughts on how we could apply this to other regions.
 - Please include a description of how you solved the task. Explain your thought process and the decisions you made along the way. Also include any improvements you would make if you had more time.
 - You are free to make any changes to the pipeline. If you make changes to the setup and/or dependencies, please include instructions on how to run the pipeline.
@@ -22,7 +22,8 @@ The data you will be working with is a timeseries of electricity production brea
 ## Deliverables
 - A `README.md` file that describes how you solved the task. How did you approach the problem? What assumptions did you make?  What improvements would you make if you had more time? Replace this README with your own.
 - A short description of how to run the pipeline (if you made any changes to the setup)
-- Your code
+- Your implementation of the data quality checks
+- (Optional) Your updated `investigation.ipynb`, if you used it to explore the data
 - When finished, share the repository with [@FelixDQ](https://github.com/FelixDQ), [@pierresegonne](https://github.com/pierresegonne) and [@wobniarin](https://github.com/wobniarin)
 
 ## Task breakdown
