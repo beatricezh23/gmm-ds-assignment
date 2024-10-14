@@ -4,7 +4,6 @@ from src.lib.reader import read_csv
 from src.validate import validate_events
 
 
-
 def main():
     data_files = os.listdir("./data")
 
